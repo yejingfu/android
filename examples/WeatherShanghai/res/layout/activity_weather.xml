@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_shanghai"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Clear"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" 
+        android:textSize="30sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="\u2193"
+            android:textColor="@android:color/white" 
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/minTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="30\u00B0"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/white"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u2191" 
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/maxTemp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60\u00B0"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/curTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50\u00B0"
+        android:textSize="80sp"
+        android:paddingLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh" 
+        android:onClick="refreshWeather"/>
+
+</LinearLayout>
