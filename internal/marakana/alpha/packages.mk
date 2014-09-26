@@ -6,3 +6,5 @@ PRODUCT_PACKAGES += \
         com.marakana.android.lib.log \
         com.marakana.android.lib.log.xml \
         libmrknlog_jni
+        
+PRODUCT_PACKAGES += MrknLogNative
