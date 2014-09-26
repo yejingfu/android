@@ -1,11 +1,16 @@
 package com.intel.weathershanghai;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import com.intel.weathershanghai.R.layout;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -19,6 +24,8 @@ public class ForecastActivity extends ListActivity {
 	String cityName;
 	String request;
 	String response;
+	ArrayList<String> weatherItems = new ArrayList<String>();
+	ArrayAdapter<String> adapter = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,9 @@ public class ForecastActivity extends ListActivity {
         // items.add(...)
         // Adaptor adaptor = new ...
         // adaptor.notifyDataSetChanged();
+        
+        adapter = new ArrayAdapter<String>(this, layout.activity_forecast, R.id.labelWeather, weatherItems);
+        this.setListAdapter(adapter);
         
         new ForecastTask().execute();
 	}
@@ -88,12 +98,16 @@ public class ForecastActivity extends ListActivity {
     						+ curObj.getString("dt_txt");
     				items[i] = output;
     				
+    				weatherItems.add(output);
+    				
     			}
     			
-    			ForecastActivity.this.setListAdapter(new ArrayAdapter<String>(
-    					ForecastActivity.this,
-    					android.R.layout.simple_list_item_1, 
-    					items));
+//    			ForecastActivity.this.setListAdapter(new ArrayAdapter<String>(
+//    					ForecastActivity.this,
+//    					android.R.layout.simple_list_item_1, 
+//    					items));
+    			
+    			adapter.notifyDataSetChanged();
     			
     		} catch (Throwable e) {
     			e.printStackTrace();
